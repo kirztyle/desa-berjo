@@ -1,9 +1,17 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+// Define the type for each hiburan item
+interface Hiburan {
+  id: number;       // Assuming 'id' is a number, adjust if it's a string
+  gambar: string;   // 'gambar' is a string (image URL)
+  nama: string;     // 'nama' is a string (name)
+}
+
 export default function HiburanCards() {
-  const [hiburanData, setHiburanData] = useState([]);
+  // Specify that hiburanData is an array of Hiburan objects
+  const [hiburanData, setHiburanData] = useState<Hiburan[]>([]);
 
   useEffect(() => {
     fetch("/data/wisata.json")
