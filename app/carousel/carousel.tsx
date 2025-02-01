@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image"; // Import Image component from next/image
 
 const Carousel = () => {
   const images = ["/g1.jpg", "/g2.webp", "/g3.jpg", "/g4.jpg"];
@@ -7,27 +8,23 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Function untuk berpindah gambar
+  // Function to move to next image
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  const prevImage = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
+  
 
-  // Set interval untuk auto-scroll saat tidak hover
+  // Set interval for auto-scroll when not hovered
   useEffect(() => {
     if (!isHovered) {
-      const interval = setInterval(nextImage, 3000); // Set interval 3 detik untuk berpindah gambar
-      return () => clearInterval(interval); // Bersihkan interval saat komponen di-unmount atau saat hover
+      const interval = setInterval(nextImage, 3000); // Set interval of 3 seconds to change images
+      return () => clearInterval(interval); // Clean up the interval when component unmounts or when hovered
     }
   }, [isHovered]);
 
   return (
-    <div className="grid py-8 items-center justify-center ">
+    <div className="grid py-8 items-center justify-center">
       <div className="relative w-full max-w-screen-2xl mx-auto overflow-hidden">
         {/* Carousel Container */}
         <div
@@ -44,10 +41,13 @@ const Carousel = () => {
           >
             {images.map((image, index) => (
               <div key={index} className="w-full flex-shrink-0">
-                <img
+                <Image
                   src={image}
                   alt={`Image ${index + 1}`}
                   className="w-full h-96 object-cover rounded-lg"
+                  width={1920} // Adjust the width
+                  height={500} // Adjust the height
+                  layout="responsive"
                 />
               </div>
             ))}
