@@ -1,0 +1,44 @@
+{
+    "wisata_desa_berjo": [
+      {
+        "id": 1,
+        "nama": "Outbond",
+        "gambar": "/outbound.webp"
+      },
+      {
+        "id": 2,
+        "nama": "Flying Fox",
+        "gambar": "/flying-fox.jpg"
+      },
+      {
+        "id": 3,
+        "nama": "Arung Jeram",
+        "gambar": "/arung-jeram.jpg"
+      },
+      {
+        "id": 4,
+        "nama": "Camping Ground",
+        "gambar": "/camping-ground.jpg"
+      },
+      {
+        "id": 5,
+        "nama": "Kolam Renang Alam",
+        "gambar": "/kolam-renang-alam.jpg"
+      },
+      {
+        "id": 6,
+        "nama": "ATV Adventure",
+        "gambar": "/atv-adventure.jpg"
+      },
+      {
+        "id": 7,
+        "nama": "Trekking Alam",
+        "gambar": "/trekking-alam.jpg"
+      },
+      {
+        "id": 8,
+        "nama": "Wisata Edukasi Pertanian",
+        "gambar": "/edukasi-pertanian.jpg"
+      }
+    ]
+  }
