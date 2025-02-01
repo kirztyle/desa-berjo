@@ -24,7 +24,7 @@ const Carousel = () => {
   }, [isHovered]);
 
   return (
-    <div className="grid py-8 items-center justify-center">
+    <div className="grid py-8 items-center justify-center ">
       <div className="relative w-full max-w-screen-2xl mx-auto overflow-hidden">
         {/* Carousel Container */}
         <div
@@ -41,13 +41,10 @@ const Carousel = () => {
           >
             {images.map((image, index) => (
               <div key={index} className="w-full flex-shrink-0">
-                <Image
+                <img
                   src={image}
                   alt={`Image ${index + 1}`}
                   className="w-full h-96 object-cover rounded-lg"
-                  width={1920} // Adjust the width
-                  height={500} // Adjust the height
-                  layout="responsive"
                 />
               </div>
             ))}
